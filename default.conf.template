@@ -1,0 +1,11 @@
+server {
+    listen 80 default_server;
+
+    location = ${NGINX_ENVSUBST_HEALTH_CHECK_PATH} {
+        return 200;
+    }
+
+    location / {
+        return 404;
+    }
+}
